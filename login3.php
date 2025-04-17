@@ -7,26 +7,22 @@
  
  if($usuario && $senha){
      $query = $pdo->prepare('SELECT * FROM usuarios WHERE usuario=:usuario');
- 
      $query->execute([":usuario"=>$usuario]);
- 
      $usuario = $query->fetchAll(PDO::FETCH_ASSOC);
- 
-     if(password_verify($senha, $usuario[0]['senha'])){
- 
+
+     if (isset($usuario[0]) && password_verify($senha, $usuario[0]['senha'])) {
          session_start();
          $_SESSION['usuario']=$usuario;
-         
          header("location: compras.php");
+     } else {
+        echo $twig->render('login.html', [
+            'titulo' => 'Login'
+        ]);
+    }
  
-     }else{
-         echo $twig->render('login.html', [
-             'titulo' => 'Login'
-         ]);
-     }
- 
- }else{
+ } else {
      echo $twig->render('login.html', [
          'titulo' => 'Login'
      ]);
+   
  }

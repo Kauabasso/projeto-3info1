@@ -15,4 +15,3 @@ echo $twig->render('compras.html', [
     'compras' => $comp, //no html ela vai se chamar compras, aqui ela se chama comp
 ]);
 
-//opa
