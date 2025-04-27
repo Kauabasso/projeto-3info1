@@ -2,7 +2,7 @@
 require_once('twig_carregar.php');
 require('inc/banco.php');
 require_once('session.php');
-require_once('vendor/autoload.php'); // se ainda não tiver
+require_once('vendor/autoload.php'); 
 use Carbon\Carbon;
 
 $dados = $pdo->query('SELECT * FROM compromissos ORDER BY data ASC');
