@@ -12,6 +12,9 @@
      {% if titulo %}
      <h2> {{ titulo }}</h2>
      {% endif %}
+     {% if usuario %}
+    <p>Olá, {{ usuario }}!</p>
+    {% endif %}
      <form action="login3.php" method="post">
          <input type="text" name="usuario" placeholder="Login:">
          <br>

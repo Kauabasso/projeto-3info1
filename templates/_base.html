@@ -15,12 +15,16 @@
     {% if titulo %}
     <h2>{{titulo}}</h2>
     {% endif %}
+    {% if usuario %}
+    <p>Olá, {{ usuario }}!</p>
+{% endif %}
     <hr>
     <a href="index.php">Inicial</a> |
     <a href="compras.php">Compras</a> |
     <a href="compromissos.php">Lista de Compromissos</a> |
     <a href="horario.php">Horários</a> |
-    <a href="deslogar.php">Deslogar</a>
+    <a href="alterar_senha.php">Alterar Senha</a> |
+    <a href="deslogar.php">Deslogar</a> 
     <hr>
 
     {% block conteudo %}{% endblock %}
